@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Archivo } from 'next/font/google';
+// import './styles.css'
 
-const inter = Inter({ subsets: ["latin"] });
+const archivo = Archivo({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-archivo',
+});
+
 
 export const metadata: Metadata = {
   title: "Sean O'Donnell",
@@ -16,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={archivo.variable}>
+        {children}
+      </body>
     </html>
   );
 }
