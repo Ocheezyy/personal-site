@@ -1,4 +1,4 @@
-import { PersonalPage } from "@/components/component/PersonalPage";
+import { PersonalPage } from "@/components/PersonalPage";
 
 export default function Home() {
   return <PersonalPage />;

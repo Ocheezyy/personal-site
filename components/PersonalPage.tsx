@@ -6,9 +6,11 @@ import {
   CardHeader,
   CardContent,
   Card,
+  CardFooter
 } from "@/components/ui/card";
 import { DownloadCloud } from "lucide-react";
 import ContactForm from "./ContactForm";
+import { projects } from "@/Projects";
 
 export function PersonalPage() {
   const formsAccessKey = process.env.FORMS_ACCESS_KEY!;
@@ -179,7 +181,7 @@ export function PersonalPage() {
           </div>
         </section>
         {/* TODO: Add fun projects here :) */}
-        {/* <section className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center" id="projects">
+        <section className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center" id="projects">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -187,33 +189,53 @@ export function PersonalPage() {
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-50">My Previous Work</h2>
               </div>
               <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-gray-50">Project Name</CardTitle>
-                    <CardDescription className="text-gray-400">A brief description of the project.</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Image
-                      alt="Project Image"
-                      className="aspect-video overflow-hidden rounded-lg object-cover bg-gray-50"
-                      height="225"
-                      src="/placeholder.svg"
-                      width="400"
-                    />
-                  </CardContent>
-                  <CardFooter>
-                    <Link
-                      className="inline-flex h-9 items-center justify-center rounded-md bg-gray-50 px-4 py-2 text-sm font-medium text-gray-900 shadow transition-colors hover:bg-gray-50/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-300 disabled:pointer-events-none disabled:opacity-50"
-                      href="#"
-                    >
-                      View Project
-                    </Link>
-                  </CardFooter>
-                </Card>
+                {projects.map((project, projectIdx) => (
+                    <Card key={`project-${projectIdx}`} className="bg-gray-800 text-gray-50">
+                      <CardHeader>
+                        <CardTitle className="text-gray-50">{project.title}</CardTitle>
+                        <CardDescription className="text-gray-400">{project.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <Image
+                            alt={`${project.title}-preview-image`}
+                            className="aspect-video overflow-hidden rounded-lg object-cover bg-gray-50"
+                            height="225"
+                            src={project.imageUrl}
+                            width="400"
+                        />
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {project.technologies.map((tech, techIdx) => (
+                          <span key={`${projectIdx}-tech-${techIdx}`} className="inline-flex items-center rounded-md bg-gray-700 px-2 py-1 text-xs font-medium text-gray-50">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      </CardContent>
+                      <CardFooter className="flex justify-between gap-2">
+                        <Link
+                            className="inline-flex h-9 items-center justify-center rounded-md bg-gray-50 px-4 py-2 text-sm font-medium text-gray-900 shadow transition-colors hover:bg-gray-50/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-300 disabled:pointer-events-none disabled:opacity-50 flex-1"
+                            href={project.appUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                          Live Demo
+                        </Link>
+                        <Link
+                            className="inline-flex h-9 items-center justify-center rounded-md bg-gray-700 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-300 disabled:pointer-events-none disabled:opacity-50 flex-1"
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                          <GithubIcon className="mr-2 h-4 w-4" />
+                          GitHub
+                        </Link>
+                      </CardFooter>
+                    </Card>
+                ))}
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
         <section
           className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center"
           id="contact"
