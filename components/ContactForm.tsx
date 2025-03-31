@@ -48,7 +48,6 @@ export default function ContactForm(props: IContactForm) {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm">
@@ -103,7 +102,7 @@ export default function ContactForm(props: IContactForm) {
             </div>
             <p className="text-gray-400">
               This will only be used to communicate directly with you, and your
-              information won&apos;t be put into some newletter :&#41;
+              information won&apos;t be put into some newsletter :&#41;
             </p>
             <Button
               className="w-full bg-gray-50 text-gray-900"
@@ -119,14 +118,13 @@ export default function ContactForm(props: IContactForm) {
             </Button>
           </div>
         </div>
-        <Image
-          alt="Image"
-          className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last bg-gray-50"
-          height="310"
-          src="/placeholder.svg"
-          width="550"
-        />
-      </div>
+        {/*<Image*/}
+        {/*  alt="Image"*/}
+        {/*  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last bg-gray-50"*/}
+        {/*  height="310"*/}
+        {/*  src="/placeholder.svg"*/}
+        {/*  width="550"*/}
+        {/*/>*/}
     </form>
   );
 }

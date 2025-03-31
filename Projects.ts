@@ -16,11 +16,11 @@ export const projects = [
         githubUrl: "https://github.com/ocheezyy/cheez-trivia.web",
     },
     {
-        title: "Cheez Board",
-        description: "A real time task management tool",
-        imageUrl: "/cheez-board.png",
-        technologies: ["Next.js", "React.js", "Zustand", "Tailwind"],
-        appUrl: "https://cheez-board.ocheezy.dev",
-        githubUrl: "https://github.com/ocheezyy/cheez-board",
+        title: "Cheez IMS",
+        description: "A inventory management system",
+        imageUrl: "/cheez-ims.png",
+        technologies: ["C#", ".NET 8.0", "React.js", "Postgresql", "Tailwind"],
+        appUrl: "https://cheez-ims.ocheezy.dev",
+        githubUrl: "https://github.com/ocheezyy/cheez-ims.web",
     }
 ]
