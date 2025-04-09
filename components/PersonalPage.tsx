@@ -186,7 +186,7 @@ export function PersonalPage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm">Projects</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-50">My Previous Work</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-50">My Personal Projects</h2>
               </div>
               <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {projects.map((project, projectIdx) => (

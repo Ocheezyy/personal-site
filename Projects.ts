@@ -22,5 +22,13 @@ export const projects = [
         technologies: ["C#", ".NET 8.0", "React.js", "Postgresql", "Tailwind"],
         appUrl: "https://cheez-ims.ocheezy.dev",
         githubUrl: "https://github.com/ocheezyy/cheez-ims.web",
+    },
+    {
+        title: "Cheez Vault",
+        description: "A secure note sharing site",
+        imageUrl: "/cheez-vault.png",
+        technologies: ["React.js", "Python", "FastAPI", "Redis"],
+        appUrl: "https://cheez-vault.ocheezy.dev",
+        githubUrl: "https://github.com/ocheezyy/cheez-vault.web",
     }
 ]
